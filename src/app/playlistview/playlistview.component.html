@@ -1,0 +1,9 @@
+<h1>{{ playlist.title }}</h1>
+
+<ul>
+  <li *ngFor="let video of playlist.videos; let i = index">
+    (<strong>{{ index }}</strong>) {{ video.title }}
+  </li>
+</ul>
+
+<app-videoview></app-videoview>

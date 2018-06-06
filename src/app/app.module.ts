@@ -7,12 +7,14 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { VideoviewComponent } from './videoview/videoview.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { PlaylistviewComponent } from './playlistview/playlistview.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     VideoviewComponent,
-    DashboardComponent
+    DashboardComponent,
+    PlaylistviewComponent
   ],
   imports: [
     BrowserModule,

@@ -13,20 +13,14 @@ import { Video } from '../video';
 })
 export class VideoviewComponent implements OnInit {
   public YT: any;
-  public video: any;
   public player: any;
   public reframed: Boolean = false;
+  public video: any;
 
-  public video: Video;
+  public route: ActivatedRoute;
 
-  constructor() { }
-
-  init() {
-    var tag = document.createElement('script');
-    tag.src = 'https://www.youtube.com/iframe_api';
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
+  constructor(route: ActivatedRoute) {
+    // this.route = route;
     this.video = {
       id: 0,
       title: "She's angry because I made fun of her...",
@@ -35,8 +29,17 @@ export class VideoviewComponent implements OnInit {
       likes: 190000,
       dislikes: 2200,
       creator: "PewDiePie",
-      watchCode: "jJI2qJmDLAQ"
-    }
+      watchCode: "CZkUNPBlJIQ"
+    };
+
+    this.video.watchCode = route.snapshot.params['videoid'];
+  }
+
+  init() {
+    var tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
   }
 
   ngOnInit() {
@@ -62,8 +65,8 @@ export class VideoviewComponent implements OnInit {
   }
 
   getVideo(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.videourl = id;
+    const id = this.route.snapshot.paramMap.get('videoid');
+    this.video.watchCode = id;
   }
 
   onPlayerStateChange(event) {
@@ -101,5 +104,4 @@ export class VideoviewComponent implements OnInit {
         break;
     };
   };
-
 }

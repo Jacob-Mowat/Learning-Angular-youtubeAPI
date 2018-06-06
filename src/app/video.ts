@@ -1,4 +1,4 @@
-export default class Video {
+export class Video {
   id: number;
   title: string;
   videoUrl: string;
