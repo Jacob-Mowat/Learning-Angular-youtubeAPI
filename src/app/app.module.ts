@@ -8,13 +8,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { VideoviewComponent } from './videoview/videoview.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PlaylistviewComponent } from './playlistview/playlistview.component';
+import { NavigationviewComponent } from './navigationview/navigationview.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     VideoviewComponent,
     DashboardComponent,
-    PlaylistviewComponent
+    PlaylistviewComponent,
+    NavigationviewComponent
   ],
   imports: [
     BrowserModule,
