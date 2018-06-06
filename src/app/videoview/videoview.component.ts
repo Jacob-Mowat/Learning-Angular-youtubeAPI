@@ -20,7 +20,7 @@ export class VideoviewComponent implements OnInit {
   public route: ActivatedRoute;
 
   constructor(route: ActivatedRoute) {
-    // this.route = route;
+    this.route = route; // may cause problems
     this.video = {
       id: 0,
       title: "She's angry because I made fun of her...",

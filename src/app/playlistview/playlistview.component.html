@@ -2,7 +2,7 @@
 
 <ul>
   <li *ngFor="let video of playlist.videos; let i = index">
-    (<strong>{{ index }}</strong>) {{ video.title }}
+    (<strong>{{ i+1 }}</strong>) {{ video.title }}
   </li>
 </ul>
 
